@@ -1,7 +1,7 @@
 <html>
 <body>
 	This is the <b>second</b> website!<br>
-	You've input this on the <b>first</b> website:
+	You've input this on the <b>first</b> website:<br><br>
 	
 	<script>
 		getQueryString();
@@ -22,8 +22,8 @@
 					else if(stringArray[i].split('=')[0] == 'page')
 						age = stringArray[i].split('=')[1];
 				}
-				document.writeln("Name: " + name);
-				document.writeln("Age: " + age);
+				document.writeln("Name: <b>" + name + "</b><br>");
+				document.writeln("Age: <b>" + age + "</b>");
 			}
 		}
 	</script>
