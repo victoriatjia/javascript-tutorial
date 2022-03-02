@@ -1,0 +1,31 @@
+<html>
+<body>
+	This is the <b>second</b> website!<br>
+	You've input this on the <b>first</b> website:
+	
+	<script>
+		getQueryString();
+		
+		function getQueryString(){
+			var name="";
+			var age=-1;
+			var url = location.href;	//Get the URL string (e.g. https://www.google.com?myname=xxx )
+			if(url.indexOf('?')!=-1)	//if url contains question mark
+			{
+				var stringArray = url.split('?')[1];
+				stringArray= stringArray.split('&');
+				
+				for(i=0;i<=stringArray.length-1;i++)
+				{
+					if(stringArray[i].split('=')[0] == 'pname')
+						name = stringArray[i].split('=')[1];
+					else if(stringArray[i].split('=')[0] == 'page')
+						age = stringArray[i].split('=')[1];
+				}
+				document.write("Name: " + name);
+				document.write("Age: " + age);
+			}
+		}
+	</script>
+</body>
+</html>
