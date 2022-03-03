@@ -9,22 +9,26 @@
 		function getQueryString(){
 			var name="";
 			var email="";
-			var url = location.href;	//Get page URL string
-			if(url.indexOf('?')!=-1)	//if url contains question mark
+			var params = new URLSearchParams(window.location.search)	//Get query string part of the URL
+			
+			document.write("<h2>Get parameter by checking on its key:</h2>");
+			if(params.has('pname'))									//If parameter key is "pname"
 			{
-				var stringArray = url.split('?')[1];
-				stringArray= stringArray.split('&');
-				
-				for(i=0;i<=stringArray.length-1;i++)
-				{
-					if(stringArray[i].split('=')[0] == 'pname')
-						name = stringArray[i].split('=')[1];
-					else if(stringArray[i].split('=')[0] == 'pemail')
-						email = stringArray[i].split('=')[1];
-				}
-				document.writeln("Name: <b>" + name + "</b><br>");
-				document.writeln("Email: <b>" + email + "</b>");
+				name = params.get('pname');							//then store value into "name" variable
+				document.write("Name: <b>" + name + "</b><br>");
 			}
+			if(params.has('pemail'))								//If parameter key is "pemail"
+			{
+				email = params.get('pemail');						//then store value into "email" variable
+				document.write("Email: <b>" + email + "</b>");
+			}
+			
+			//You also can iterate over all the parameters, using for..of:
+			document.write("<h2>Get parameter by iterate over all the parameters:</h2>");
+			for (const param of params) {
+				document.write(param[0] + ": " + param[1] + "<br>");
+			}
+			
 		}
 	</script>
 </body>
