@@ -1,11 +1,6 @@
 # Query String in Javascript
+###### tags: `Javascript`
 
-###### tags: `IT` `Javascript`
-## Table of Contents
-
-[TOC]
-
-## Introduction
 In this tutorial, I will share how to get query string parameters in JavaScript.
 
 ## Testing Scenario
